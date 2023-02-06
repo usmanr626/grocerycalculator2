@@ -79,7 +79,7 @@ const GroceryScreen = ({navigation}) => {
   const renderHeader = () => {
     return (
       <View style={styles.headerStyle}>
-        <Text>Dairy List</Text>
+        <Text>Grocery List</Text>
       </View>
     );
   };

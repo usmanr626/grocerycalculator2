@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, Alert } from "react-native";
-import styles from "./styles";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { TextButton } from "../../components/textButton";
+import React, {useEffect, useState} from 'react';
+import {View, Text, Alert} from 'react-native';
+import styles from './styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {TextButton} from '../../components/textButton';
 
-const TotalScreen = ({ navigation }) => {
-  const [dairyTotal, setDairyTotal] = useState("");
-  const [groceryTotal, setGroceryTotal] = useState("");
-  const [subTotal, setsubTotal] = useState("");
+const TotalScreen = ({navigation}) => {
+  const [dairyTotal, setDairyTotal] = useState('');
+  const [groceryTotal, setGroceryTotal] = useState('');
+  const [subTotal, setsubTotal] = useState('');
 
   useEffect(() => {
     const getDairyTotal = async () => {
       try {
-        const storedTotal = await AsyncStorage.getItem("totalDairy");
+        const storedTotal = await AsyncStorage.getItem('totalDairy');
         setDairyTotal(Number(storedTotal));
       } catch (error) {
         console.error(error);
@@ -25,7 +25,7 @@ const TotalScreen = ({ navigation }) => {
   React.useEffect(() => {
     const getGroceryTotal = async () => {
       try {
-        const storedTotal = await AsyncStorage.getItem("total");
+        const storedTotal = await AsyncStorage.getItem('total');
         setGroceryTotal(Number(storedTotal));
       } catch (error) {
         console.error(error);
@@ -45,13 +45,13 @@ const TotalScreen = ({ navigation }) => {
 
   const resetData = async () => {
     try {
-      await AsyncStorage.removeItem("totalDairy");
-      await AsyncStorage.removeItem("productsDairy");
-      await AsyncStorage.removeItem("products");
-      await AsyncStorage.removeItem("total");
-      setDairyTotal("");
-      setGroceryTotal("");
-      setsubTotal("");
+      await AsyncStorage.removeItem('totalDairy');
+      await AsyncStorage.removeItem('productsDairy');
+      await AsyncStorage.removeItem('products');
+      await AsyncStorage.removeItem('total');
+      setDairyTotal('');
+      setGroceryTotal('');
+      setsubTotal('');
       return true;
     } catch (exception) {
       return false;
@@ -61,21 +61,55 @@ const TotalScreen = ({ navigation }) => {
     return (
       <>
         <View style={styles.totalListStyle}>
-          <Text>YOUR TOTAL FOR THIS MONTH IS:{groceryTotal + dairyTotal}</Text>
-          <Text>Dairy:{dairyTotal}</Text>
-          <Text>Grocery:{groceryTotal}</Text>
+          <View
+            style={{
+              width: '100%',
+              height: 80,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'orange',
+              marginBottom: 2,
+            }}>
+            <Text style={{fontWeight: '700'}}>
+              TOTAL FOR THIS MONTH IS: {groceryTotal + dairyTotal}
+            </Text>
+          </View>
+
+          <View
+            style={{
+              width: '100%',
+              height: 80,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'orange',
+              marginBottom: 2,
+            }}>
+            <Text style={{fontWeight: '700'}}>Dairy: {dairyTotal}</Text>
+          </View>
+
+          <View
+            style={{
+              width: '100%',
+              height: 80,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'orange',
+              marginBottom: 2,
+            }}>
+            <Text style={{fontWeight: '700'}}>Grocery: {groceryTotal}</Text>
+          </View>
         </View>
         <View style={styles.totalTextStyle}>
           <TextButton
             buttonText="Reset"
             onPress={() =>
-              Alert.alert("Reset Data?", "All Data will be Lost", [
+              Alert.alert('Reset Data?', 'All Data will be Lost', [
                 {
-                  text: "Cancel",
+                  text: 'Cancel',
 
-                  style: "destructive",
+                  style: 'destructive',
                 },
-                { text: "OK", onPress: () => resetData() },
+                {text: 'OK', onPress: () => resetData()},
               ])
             }
           />

@@ -1,9 +1,9 @@
-import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
-import styles from "./styles";
-import { TextButton } from "../../components/textButton";
+import React from 'react';
+import {SafeAreaView, Text, View} from 'react-native';
+import styles from './styles';
+import {TextButton} from '../../components/textButton';
 
-const MainScreen = ({ navigation }) => {
+const MainScreen = ({navigation}) => {
   const renderHeader = () => {
     return (
       <View style={styles.headerStyle}>
@@ -17,17 +17,15 @@ const MainScreen = ({ navigation }) => {
         <View style={styles.textButtonStyle}>
           <TextButton
             buttonText="Grocery"
-            onPress={() => navigation.navigate("GroceryScreen")}
-          ></TextButton>
+            onPress={() => navigation.navigate('GroceryScreen')}></TextButton>
           <TextButton
             buttonText="Dairy"
-            onPress={() => navigation.navigate("DairyScreen")}
-          ></TextButton>
+            onPress={() => navigation.navigate('DairyScreen')}></TextButton>
         </View>
 
         <TextButton
           buttonText="Total"
-          onPress={() => navigation.navigate("TotalScreen")}
+          onPress={() => navigation.navigate('TotalScreen')}
         />
       </>
     );
