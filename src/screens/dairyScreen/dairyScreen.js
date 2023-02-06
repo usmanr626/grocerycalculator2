@@ -426,7 +426,7 @@ const DairyScreen = ({navigation}) => {
   const saveTotal = async total => {
     console.log('Save Total Called');
     try {
-      await AsyncStorage.setItem('total', total.toString());
+      await AsyncStorage.setItem('totalDairy', total.toString());
       console.log('Total saved', total);
     } catch (error) {
       console.error(error);
@@ -467,7 +467,7 @@ const DairyScreen = ({navigation}) => {
   };
   const deleteLastEntry = async () => {
     const storedProducts =
-      JSON.parse(await AsyncStorage.getItem('products')) || [];
+      JSON.parse(await AsyncStorage.getItem('productsDairy')) || [];
     if (storedProducts.length > 0) {
       const lastProduct = storedProducts[storedProducts.length - 1];
       storedProducts.pop(); // remove the last entry
@@ -477,7 +477,10 @@ const DairyScreen = ({navigation}) => {
       setTotal(updatedTotal);
 
       try {
-        await AsyncStorage.setItem('products', JSON.stringify(storedProducts));
+        await AsyncStorage.setItem(
+          'productsDairy',
+          JSON.stringify(storedProducts),
+        );
         await AsyncStorage.setItem('totalDairy', updatedTotal.toString());
       } catch (error) {
         console.error(error);
