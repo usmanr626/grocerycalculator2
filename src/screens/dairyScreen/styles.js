@@ -1,17 +1,18 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
+import {COLORS} from '../../constants/theme';
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     //justifyContent: "center",
     // alignItems: "center",
-    backgroundColor: "#FF7F50",
+    backgroundColor: COLORS.primary1,
   },
   headerStyle: {
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    backgroundColor: "orange",
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: COLORS.primary2,
     height: 60,
     transform: [
       {
@@ -20,19 +21,19 @@ const styles = StyleSheet.create({
     ],
   },
   groceryListContainer: {
-    width: "100%",
-    height: "60%",
+    width: '100%',
+    height: '60%',
 
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   inputContainerStyle: {
-    width: "100%",
-    height: "33%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '100%',
+    height: '33%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  textButtonContainer: { marginTop: 10 },
+  textButtonContainer: {marginTop: 10},
 });
 
 export default styles;

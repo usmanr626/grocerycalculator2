@@ -1,17 +1,18 @@
 import {StyleSheet} from 'react-native';
+import {COLORS} from '../../constants/theme';
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    backgroundColor: '#FF7F50',
+    backgroundColor: COLORS.primary1,
   },
   headerStyle: {
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: 'orange',
+    backgroundColor: COLORS.primary2,
     height: 60,
     transform: [
       {

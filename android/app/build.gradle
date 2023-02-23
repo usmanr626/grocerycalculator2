@@ -89,6 +89,9 @@ def reactNativeArchitectures() {
 }
 
 android {
+    dexOptions {
+      jumboMode = true
+  }
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion

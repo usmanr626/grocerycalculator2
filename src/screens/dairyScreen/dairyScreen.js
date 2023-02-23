@@ -260,6 +260,7 @@ import {
 import styles from './styles';
 import {TextButton} from '../../components/textButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {COLORS} from '../../constants/theme';
 
 let dummyData = [
   {
@@ -395,7 +396,7 @@ const DairyScreen = ({navigation}) => {
                   justifyContent: 'space-around',
                   alignItems: 'center',
                   paddingBottom: 5,
-                  backgroundColor: 'orange',
+                  backgroundColor: COLORS.primary2,
                   height: 50,
                 }}>
                 <Text>{item.date}</Text>
@@ -504,7 +505,7 @@ const DairyScreen = ({navigation}) => {
             style={{
               width: 180,
               height: 60,
-              backgroundColor: 'white',
+              backgroundColor: COLORS.white,
               borderRadius: 80,
               paddingHorizontal: 10,
               marginVertical: 20,
@@ -517,7 +518,7 @@ const DairyScreen = ({navigation}) => {
             style={{
               width: 180,
               height: 60,
-              backgroundColor: 'white',
+              backgroundColor: COLORS.white,
               borderRadius: 80,
               paddingHorizontal: 10,
               marginVertical: 20,
