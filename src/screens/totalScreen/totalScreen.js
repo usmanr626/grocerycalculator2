@@ -85,8 +85,9 @@ const TotalScreen = ({navigation}) => {
               backgroundColor: COLORS.primary2,
               marginBottom: 2,
             }}>
-            <Text style={{fontWeight: '700'}}>
-              TOTAL FOR THIS MONTH IS: {groceryTotal + dairyTotal}
+            <Text style={{fontSize: 18, fontWeight: '700'}}>
+              TOTAL FOR THIS MONTH IS:
+              <Text style={{fontSize: 20}}> {groceryTotal + dairyTotal}</Text>
             </Text>
           </View>
 
@@ -99,7 +100,10 @@ const TotalScreen = ({navigation}) => {
               backgroundColor: COLORS.primary2,
               marginBottom: 2,
             }}>
-            <Text style={{fontWeight: '700'}}>Dairy: {dairyTotal}</Text>
+            <Text style={{fontSize: 18, fontWeight: '700'}}>
+              Dairy:
+              <Text style={{fontSize: 20}}> {dairyTotal}</Text>
+            </Text>
           </View>
 
           <View
@@ -111,7 +115,10 @@ const TotalScreen = ({navigation}) => {
               backgroundColor: COLORS.primary2,
               marginBottom: 2,
             }}>
-            <Text style={{fontWeight: '700'}}>Grocery: {groceryTotal}</Text>
+            <Text style={{fontSize: 18, fontWeight: '700'}}>
+              Grocery:
+              <Text style={{fontSize: 20}}> {groceryTotal}</Text>
+            </Text>
           </View>
         </View>
         <View style={styles.totalTextStyle}>
@@ -128,7 +135,7 @@ const TotalScreen = ({navigation}) => {
               ])
             }
           />
-          <TextButton
+          {/* <TextButton
             buttonText="PDF"
             onPress={() =>
               Alert.alert('Convert to PDf?', 's', [
@@ -140,7 +147,7 @@ const TotalScreen = ({navigation}) => {
                 {text: 'OK', onPress: () => convertToPdf()},
               ])
             }
-          />
+          /> */}
         </View>
       </>
     );

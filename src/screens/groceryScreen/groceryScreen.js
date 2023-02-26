@@ -251,7 +251,7 @@ const GroceryScreen = ({navigation}) => {
             style={{
               width: 180,
               height: 60,
-              backgroundColor: COLORS.white,
+              backgroundColor: COLORS.primary2,
               borderRadius: 80,
               paddingHorizontal: 10,
               marginVertical: 20,
@@ -264,7 +264,7 @@ const GroceryScreen = ({navigation}) => {
             style={{
               width: 180,
               height: 60,
-              backgroundColor: COLORS.white,
+              backgroundColor: COLORS.primary2,
               borderRadius: 80,
               paddingHorizontal: 10,
               marginVertical: 20,

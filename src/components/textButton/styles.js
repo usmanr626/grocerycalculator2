@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
   buttonContaier: {
     width: windowWidth * 0.3,
     height: windowWidth * 0.15,
-    backgroundColor: COLORS.secondary1,
-    borderRadius: windowWidth,
+    backgroundColor: COLORS.white,
+    borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },

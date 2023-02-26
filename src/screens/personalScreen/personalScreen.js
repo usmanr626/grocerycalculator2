@@ -22,7 +22,7 @@ let dummyData = [
   },
 ];
 
-const DairyScreen = ({navigation}) => {
+const PersonalScreen = ({navigation}) => {
   console.log('Screen Rendered');
 
   var date = new Date().getDate();
@@ -39,7 +39,7 @@ const DairyScreen = ({navigation}) => {
   React.useEffect(() => {
     const getTotal = async () => {
       try {
-        const storedTotal = await AsyncStorage.getItem('totalDairy');
+        const storedTotal = await AsyncStorage.getItem('totalPersonal');
         setTotal(Number(storedTotal));
       } catch (error) {
         console.error(error);
@@ -53,7 +53,7 @@ const DairyScreen = ({navigation}) => {
     const getStoredProducts = async () => {
       try {
         const storedProducts =
-          JSON.parse(await AsyncStorage.getItem('productsDairy')) || [];
+          JSON.parse(await AsyncStorage.getItem('productsPersonal')) || [];
         setProducts(storedProducts);
       } catch (error) {
         console.error(error);
@@ -63,7 +63,7 @@ const DairyScreen = ({navigation}) => {
     getStoredProducts();
 
     try {
-      const total = AsyncStorage.getItem('totalDairy');
+      const total = AsyncStorage.getItem('totalPersonal');
       console.log('ITEM Get:', total.toString());
     } catch (error) {
       console.error(error);
@@ -80,7 +80,7 @@ const DairyScreen = ({navigation}) => {
   const renderHeader = () => {
     return (
       <View style={styles.headerStyle}>
-        <Text>Dairy List</Text>
+        <Text>Personal List</Text>
       </View>
     );
   };
@@ -125,7 +125,7 @@ const DairyScreen = ({navigation}) => {
                       text: 'Delete',
                       onPress: async () => {
                         // try {
-                        //   await AsyncStorage.removeItem('products');
+                        //   await AsyncStorage.removeItem('productsPersonal');
                         //   return true;
                         // } catch (exception) {
                         //   return false;
@@ -179,7 +179,7 @@ const DairyScreen = ({navigation}) => {
   const saveTotal = async total => {
     console.log('Save Total Called');
     try {
-      await AsyncStorage.setItem('totalDairy', total.toString());
+      await AsyncStorage.setItem('totalPersonal', total.toString());
       console.log('Total saved', total);
     } catch (error) {
       console.error(error);
@@ -207,10 +207,10 @@ const DairyScreen = ({navigation}) => {
 
       try {
         const storedProducts =
-          JSON.parse(await AsyncStorage.getItem('productsDairy')) || [];
+          JSON.parse(await AsyncStorage.getItem('productsPersonal')) || [];
         storedProducts.push(newProduct);
         await AsyncStorage.setItem(
-          'productsDairy',
+          'productsPersonal',
           JSON.stringify(storedProducts),
         );
       } catch (error) {
@@ -220,7 +220,7 @@ const DairyScreen = ({navigation}) => {
   };
   const deleteLastEntry = async () => {
     const storedProducts =
-      JSON.parse(await AsyncStorage.getItem('productsDairy')) || [];
+      JSON.parse(await AsyncStorage.getItem('productsPersonal')) || [];
     if (storedProducts.length > 0) {
       const lastProduct = storedProducts[storedProducts.length - 1];
       storedProducts.pop(); // remove the last entry
@@ -231,10 +231,10 @@ const DairyScreen = ({navigation}) => {
 
       try {
         await AsyncStorage.setItem(
-          'productsDairy',
+          'productsPersonal',
           JSON.stringify(storedProducts),
         );
-        await AsyncStorage.setItem('totalDairy', updatedTotal.toString());
+        await AsyncStorage.setItem('totalPersonal', updatedTotal.toString());
       } catch (error) {
         console.error(error);
       }
@@ -305,4 +305,4 @@ const DairyScreen = ({navigation}) => {
   );
 };
 
-export default DairyScreen;
+export default PersonalScreen;

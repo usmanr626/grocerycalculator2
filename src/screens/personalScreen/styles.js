@@ -4,8 +4,8 @@ import {COLORS} from '../../constants/theme';
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    //justifyContent: "center",
+    // alignItems: "center",
     backgroundColor: COLORS.primary1,
   },
   headerStyle: {
@@ -16,28 +16,26 @@ const styles = StyleSheet.create({
     height: 60,
     transform: [
       {
-        translateY: -145,
+        translateY: 0,
       },
     ],
   },
-  textButtonStyle: {
-    // flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    width: '100%',
-  },
-  listContainer: {
+  groceryListContainer: {
     width: '100%',
     height: '60%',
 
     justifyContent: 'center',
     alignItems: 'center',
   },
-  separator: {
-    height: 5,
+  inputContainerStyle: {
     width: '100%',
-
-    marginTop: 5,
+    height: '33%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textButtonContainer: {
+    marginTop: 10,
+    flexDirection: 'row',
   },
 });
 

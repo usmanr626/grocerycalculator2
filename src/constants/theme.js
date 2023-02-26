@@ -3,4 +3,9 @@ export const COLORS = {
   primary2: 'orange',
   secondary1: '#FFD700',
   white: 'white',
+
+  // primary1: '#556B2F',
+  // primary2: '#BCB88A',
+
+  // white: '#6B8E23',
 };
