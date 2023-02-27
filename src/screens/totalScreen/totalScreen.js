@@ -3,9 +3,9 @@ import {View, Text, Alert} from 'react-native';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {TextButton} from '../../components/textButton';
-import PDFLib, {PDFDocument, PDFPage} from 'react-native-pdf-lib';
-import RNPDF from 'react-native-pdf-lib';
-import {Buffer} from 'buffer';
+// import PDFLib, {PDFDocument, PDFPage} from 'react-native-pdf-lib';
+// import RNPDF from 'react-native-pdf-lib';
+// import {Buffer} from 'buffer';
 import {COLORS} from '../../constants/theme';
 
 const TotalScreen = ({navigation}) => {
@@ -62,15 +62,15 @@ const TotalScreen = ({navigation}) => {
     }
   };
 
-  const convertToPdf = async () => {
-    // Create a PDF page with text and images
-    const path = RNPDF;
-    const options = {
-      path: `${path}/example.pdf`,
-      buffer: `${Buffer.from('Hello World!')}`,
-    };
-    await RNPDF.create(options);
-  };
+  // const convertToPdf = async () => {
+  //   // Create a PDF page with text and images
+  //   const path = RNPDF;
+  //   const options = {
+  //     path: `${path}/example.pdf`,
+  //     buffer: `${Buffer.from('Hello World!')}`,
+  //   };
+  //   await RNPDF.create(options);
+  // };
 
   const renderTotalList = () => {
     return (

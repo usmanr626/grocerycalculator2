@@ -257,7 +257,7 @@ const DairyScreen = ({navigation}) => {
             style={{
               width: 180,
               height: 60,
-              backgroundColor: COLORS.primary2,
+              backgroundColor: COLORS.white,
               borderRadius: 80,
               paddingHorizontal: 10,
               marginVertical: 20,
@@ -270,7 +270,7 @@ const DairyScreen = ({navigation}) => {
             style={{
               width: 180,
               height: 60,
-              backgroundColor: COLORS.primary2,
+              backgroundColor: COLORS.white,
               borderRadius: 80,
               paddingHorizontal: 10,
               marginVertical: 20,
